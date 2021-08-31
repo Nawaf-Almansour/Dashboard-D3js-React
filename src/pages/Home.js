@@ -1,6 +1,7 @@
 import React from "react";
 import BaseLayout from "../components/layouts/BaseLayout";
-import Circle from "../components/shared/Circle";
+import RectangleChart from "../components/shared/RectangleChart";
+import LineChart from "../components/shared/LineChart";
 
 
 class Home extends React.Component {
@@ -13,7 +14,8 @@ class Home extends React.Component {
         return (
             <BaseLayout className="cover">
                 <h1>Hi Home</h1>
-          <Circle/>
+          <RectangleChart/>
+          <LineChart/>
             </BaseLayout>
         )
     }
