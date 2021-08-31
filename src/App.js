@@ -4,7 +4,7 @@ import { Route, Redirect, Switch } from "react-router-dom";
 import { retry } from "./utils/commonFunctions";
 
 const Home = lazy(() => retry(() => import("./pages/Home")));
-const About = lazy(() => retry(() => import("./pages/Home")));
+const About = lazy(() => retry(() => import("./pages/About")));
 
 class App extends React.Component {
 
