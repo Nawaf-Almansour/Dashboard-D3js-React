@@ -1,4 +1,5 @@
 import Header from "../shared/Header";
+import Footer from "../shared/Footer";
 
 const BaseLayout = (props) => {
     const { children, className } = props
@@ -10,6 +11,7 @@ const BaseLayout = (props) => {
                     {children}
                 </div>
             </main>
+            <Footer/>
         </div>
 
     )
