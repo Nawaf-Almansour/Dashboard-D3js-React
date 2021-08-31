@@ -1,25 +1,47 @@
-import logo from './logo.svg';
+import React, { lazy,  Suspense } from 'react';
 import './App.css';
+import { Route, Redirect, Switch } from "react-router-dom";
+import { retry } from "./utils/commonFunctions";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const Home = lazy(() => retry(() => import("./pages/Home")));
+const About = lazy(() => retry(() => import("./pages/Home")));
+
+class App extends React.Component {
+
+    render() {
+        const pages = [
+            {
+                pageLink: "/",
+                view: Home,
+                displayName: "Home",
+                showInNavbar: true,
+            },
+            {
+                pageLink: "/about",
+                view: About,
+                displayName: "About",
+                showInNavbar: true,
+            },
+        ];
+        return (
+
+        <Suspense fallback={<div />}>
+    <Switch>
+            {pages.map((page, index) => {
+                    return (
+                        <Route
+                            exact
+                            path={page.pageLink}
+                            render={({ match }) => <page.view />}
+                            key={index}
+                        />
+                    );
+                })}
+        <Redirect to="/" />
+    </Switch>
+    </Suspense>
+        );
+    }
 }
 
 export default App;
