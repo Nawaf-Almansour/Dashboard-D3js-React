@@ -10,38 +10,54 @@ const LineChart = () => {
     useEffect(() => {
         const h = 200;
         const w = 400;
+        const padding = 25;
         let monthlySales = []
-        let salesTotal=0.0;
-        let salesAvg=0.0;
-        let metrics=[];
-
-        // let monthlySales = [
-        //     {"month": 10, "sales": 20},
-        //     {"month": 20, "sales": 14},
-        //     {"month": 30, "sales": 20},
-        //     {"month": 40, "sales": 21},
-        //     {"month": 50, "sales": 15},
-        //     {"month": 60, "sales": 22},
-        //     {"month": 70, "sales": 9},
-        //     {"month": 80, "sales": 6},
-        //     {"month": 90, "sales": 23},
-        //     {"month": 100, "sales": 55}
-        // ];
+        let salesTotal = 0.0;
+        let salesAvg = 0.0;
+        let metrics = [];
 
         monthlySales = dataJson.monthlySales
 
-        d3.csv(dataCsv).then(function(data,err) {
+        d3.csv(dataCsv).then(function (data, err) {
             // monthlySales = data
-        }).then( () => {
+        }).then(() => {
             buildLine();
             showTotals();
-        }).catch(function(err) {
+        }).catch(function (err) {
             console.log(err);  //if so, log it to the console
             throw err;
         })
 
 
+
         function buildLine() {
+
+            let xScale = d3.scaleLinear()
+                .domain([
+                    d3.min(monthlySales, function(d){ return d.month;}) ,
+                    d3.max(monthlySales, function(d){ return d.month;})
+                ])
+                .range([padding+5, w-padding]);
+
+
+
+            let yScale = d3.scaleLinear()
+                .domain([
+                        d3.min(monthlySales, function(d){ return d.sales;}) ,
+
+                    ])
+                .range([h-padding,10]);
+
+
+            // let xAxis = d3.svg.axis().scale(xScale).orient("bottom");
+            // let yAxis = d3.svg.axis().scale(yScale).orient("left");
+
+            let xAxis = d3.axisBottom(xScale)
+                .tickValues([1, 2, 3, 5, 8, 13, 21])
+
+            let yAxis = d3.axisLeft(yScale)
+                .tickValues([1, 2, 3, 5, 8, 13, 21])
+
 
             let lineFun = d3
                 .line()
@@ -52,8 +68,9 @@ const LineChart = () => {
             const svg = d3.select(svgLegendRef.current)
                 .append("svg")
                 .attr("width", w)
-                .attr("height", h);
-
+                .attr("height", h)
+                .call(xAxis)
+                .call(yAxis);
 
             svg.append("path")
                 .attr("d", lineFun(monthlySales))

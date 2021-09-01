@@ -1,7 +1,7 @@
 
 import * as d3 from "d3";
 import {useEffect, useRef} from 'react';
-import dataJson from "../../data/MonthlySalesbyCategory.json"
+// import dataJson from "../../data/MonthlySalesbyCategory.json"
 
 const RectangleChart = () => {
     const svgLegendRef = useRef(null);

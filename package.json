@@ -48,6 +48,7 @@
     ]
   },
   "devDependencies": {
+    "c3": "^0.7.20",
     "rollup-plugin-copy": "^3.4.0"
   }
 }

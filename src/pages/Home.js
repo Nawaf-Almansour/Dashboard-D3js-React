@@ -3,6 +3,7 @@ import BaseLayout from "../components/layouts/BaseLayout";
 import RectangleChart from "../components/shared/RectangleChart";
 import LineChart from "../components/shared/LineChart";
 import Scatterplot from "../components/shared/Scatterplot";
+import Chart from "../components/charts/LineChart/Chart/Chart";
 
 
 class Home extends React.Component {
@@ -18,6 +19,7 @@ class Home extends React.Component {
           <RectangleChart/>
           <LineChart/>
           <Scatterplot/>
+                <Chart />
             </BaseLayout>
         )
     }
