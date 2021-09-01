@@ -10,14 +10,16 @@ import {
     NavLink
 } from 'reactstrap';
 
-
 const BsNavLink = (props) => {
     const {route, title } = props;
     return (
-        <Link to={route}>
+        <Link
+            className='navbar__item'
+            to={route}>
     {title}
         </Link>
-    )
+
+);
 }
 
 const Header = (props) => {
@@ -31,15 +33,15 @@ const Header = (props) => {
                 <NavbarBrand className={"port-navbar-brand"} href="/">Nawaf</NavbarBrand>
                 <NavbarToggler onClick={toggle} />
                 <Collapse isOpen={isOpen} navbar>
-                    <Nav className="mr-auto" navbar>
-                        <NavItem className={"port-navbar-item"}>
+                    <Nav className="navbar mr-auto" navbar>
+                        <NavItem  className='port-navbar-item navbar__title navbar__item'>
                             <BsNavLink route={"/"} title={"Home"}/>
                         </NavItem>
-                        <NavItem>
+                        <NavItem  className='port-navbar-item navbar__title navbar__item'>
                             <BsNavLink route={"/about"} title={"About"}/>
                         </NavItem>
-                        <NavItem className="port-navbar-item">
-                            <NavLink href="https://github.com/">GitHub</NavLink>
+                        <NavItem  className='port-navbar-item navbar__title navbar__item'>
+                            <NavLink href="https://github.com/Nawaf-Almansour/Dashboard-D3js-React">GitHub</NavLink>
                         </NavItem>
                     </Nav>
                 </Collapse>
