@@ -1,5 +1,7 @@
 import React, { lazy,  Suspense } from 'react';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../src/styles/main.scss';
 import { Route, Redirect, Switch } from "react-router-dom";
 import { retry } from "./utils/commonFunctions";
 
