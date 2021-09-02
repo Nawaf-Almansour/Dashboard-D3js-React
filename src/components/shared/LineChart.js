@@ -70,11 +70,13 @@ const LineChart = () => {
                 .attr("width", w)
                 .attr("height", h)
                 .call(xAxis)
-                .call(yAxis);
+                .call(yAxis)
+                .attr("fill", "rgb(255,172,213)")
+                .attr("rx", 14);
 
             svg.append("path")
                 .attr("d", lineFun(monthlySales))
-                .attr("stroke", "purple")
+                .attr("stroke", "rgb(0,169,208)")
                 .attr("stroke-width", 2)
                 .attr("fill", "none")
 
@@ -93,9 +95,9 @@ const LineChart = () => {
                 .attr('y', function (d) {
                     return h-d.sales;
                 })
-                .attr("font-size", "12px")
+                .attr("font-size", "13px")
                 .attr("font-family", "sans-serif")
-                .attr("fill", "#666666")
+                .attr("fill", "#ffffff")
                 .attr("text-anchor", "start")
                 .attr("dy", ".35em")
                 .attr("font-weight", function (d, i) {
@@ -128,14 +130,17 @@ const LineChart = () => {
                 .enter()
                 .append("tr")
                 .append("td")
-                .text(function(d){ return d; });
+                .text(function(d){ return d; })
+                .attr("font-size", "13px")
+                .attr("font-family", "sans-serif")
+                .attr("style" , "background-color: #00000029; color:white");
 
         };
 
 
 
     });
-    return(<div ref={svgLegendRef}/>)
+    return(<div style={{background: "rgb(93,38,53)", borderRadius: "8px"} } ref={svgLegendRef}/>)
 
 }
 

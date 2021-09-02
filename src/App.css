@@ -60,9 +60,8 @@ main {
   display: flex;
   align-items: center;
 
-  background: rebeccapurple;
+  background: #1e2327;
   color: white;
-  font-family: Helvetica;
   font-weight: 300;
 }
 
