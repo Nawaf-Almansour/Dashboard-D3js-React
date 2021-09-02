@@ -35,20 +35,7 @@ const options = {
 };
 
 const GroupedBar = () => (
-    <>
-        <div className='header'>
-            <h1 className='title'>Grouped Bar Chart</h1>
-            <div className='links'>
-                <a
-                    className='btn btn-gh'
-                    href='https://github.com/reactchartjs/react-chartjs-2/blob/master/example/src/charts/GroupedBar.js'
-                >
-                    Github Source
-                </a>
-            </div>
-        </div>
-        <Bar data={data} options={options} />
-    </>
+        <Bar style={{background: "rgba(61,136,194,0.58)", borderRadius: "8px" , padding: "30px 0px"}} data={data} options={options} />
 );
 
 export default GroupedBar;

@@ -38,6 +38,8 @@ class BrushZoom extends React.Component {
 
     render() {
         return (
+            <div                 style={{background: "rgba(176,61,194,0.58)", borderRadius: "8px" , padding: "30px 0px"}}
+            >
             <VictoryChart
                 domain={{y: [0, 100]}}
                 containerComponent={<VictoryZoomContainer zoomDomain={{x: [5, 35], y: [0, 100]}}/>}
@@ -52,6 +54,7 @@ class BrushZoom extends React.Component {
                     }}
                 />
             </VictoryChart>
+            </div>
         );
     }
 }

@@ -5,6 +5,7 @@ import {useEffect, useRef} from 'react';
 
 const RectangleChart = () => {
     const svgLegendRef = useRef(null);
+    let svg;
 
     useEffect(() => {
         const w = 300;
@@ -13,11 +14,11 @@ const RectangleChart = () => {
         let dataset = [ 5, 10, 13, 19, 21, 25,
             11, 25, 22, 18, 7];
 
-            const svg = d3.select(svgLegendRef.current).append("svg")
+             svg = d3.select(svgLegendRef.current).append("svg")
                 .attr("width", w)
-                .attr("height", h);
+                .attr("height", h)
 
-            function colorPicker(v) {
+        function colorPicker(v) {
                 if (v <= 20) {
                     return "#666666";
                 } else if (v > 20) {
@@ -58,11 +59,13 @@ const RectangleChart = () => {
                     return h - (d * 4) + 14;
                 })
                 .attr("font-family", "sans-serif")
-                .attr("font-size", 12)
+                .attr("font-size", 13)
                 .attr("fill", "#ffffff")
-    });
+                .attr("font-weight","700")
+                .attr("style" , " color:white");
+    },[svg]);
 
-    return(<div ref={svgLegendRef}/>)
+    return(<div style={{background: "rgba(61,194,131,0.58)", borderRadius: "8px" , padding: "30px 0px"} }  ref={svgLegendRef}/>)
 
 }
 

@@ -9,11 +9,18 @@ import GroupedBar from "../components/charts/GroupedBar/GroupedBar";
 import BrushZoom from "../components/charts/BrushZoom/BrushZoom";
 import ParentSize from '@visx/responsive/lib/components/ParentSize';
 import Typed from 'react-typed';
+import Flash from 'react-reveal/Flash';
 
 import Example from '../components/charts/Pies/Pies';
 import {Col, Container, Row} from "reactstrap";
+import Fade from "react-reveal/Fade";
 
 class Home extends React.Component {
+
+    constructor() {
+        super();
+        this.roles = ['Dev','Tech'];
+    }
 
     componentDidMount() {
 
@@ -33,37 +40,40 @@ class Home extends React.Component {
                                     <div className={`flipper`}>
                                         <div className="back">
                                             <div className="hero-section-content">
-                                                <h2> Full Stack Web Developer </h2>
+                                                    <Fade left>
+                                                        <h2> Data visualization </h2>
+                                                    </Fade>
+                                                <Fade bottom>
                                                 <div className="hero-section-content-intro">
-                                                    Have a look at my portfolio and job history.
+                                                    Have a look at my project and enjoin.
                                                 </div>
+                                                    </Fade>
                                             </div>
-                                            {/*<img className="image" src="/images/section-1.png"/>*/}
                                             <div className="shadow-custom">
-                                                {/*<div className="shadow-inner"></div>*/}
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </Col>
                             <Col md="6" className="hero-welcome-wrapper">
+                                <Fade bottom>
                                 <div className="hero-welcome-text">
                                     <h1>
-                                        Welcome to the portfolio website of Filip Jerga. collaborate and discover
-                                        projects I was working o…
+                                        Welcome to the  website What Is Data Visualization? Definition, Examples...
                                     </h1>
                                 </div>
-                                {/*<Typed*/}
-                                {/*    loop*/}
-                                {/*    typeSpeed={70}*/}
-                                {/*    backSpeed={70}*/}
-                                {/*    strings={this.roles}*/}
-                                {/*    fadeOutDelay={1000}*/}
-                                {/*    loopCount={0}*/}
-                                {/*    showCursor*/}
-                                {/*    className="self-typed"*/}
-                                {/*    cursorChar="|"*/}
-                                {/*/>*/}
+                                </Fade>
+                                <Typed
+                                    loop
+                                    typeSpeed={70}
+                                    backSpeed={70}
+                                    strings={this.roles}
+                                    fadeOutDelay={1000}
+                                    loopCount={0}
+                                    showCursor
+                                    className="self-typed"
+                                    cursorChar="|"
+                                />
                                 <div className="hero-welcome-bio">
                                     <h1>
                                         Let's take a look on my work.
@@ -71,8 +81,9 @@ class Home extends React.Component {
                                 </div>
                             </Col>
                             <Col md="6" xs="12"  lg="6"  className="hero-welcome-wrapper">
-
+                                <Flash>
                                 <RectangleChart/>
+                                </Flash>
                             </Col>
 
                             <Col md="6" xs="12"  lg="6"  className="hero-welcome-wrapper">

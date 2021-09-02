@@ -48,7 +48,7 @@ export default ChartComponent => (
             const shouldRenderChart = containerWidth !== null
 
             return (
-                <div
+                <div style={{background: "rgba(194,183,61,0.58)", borderRadius: "8px" , padding: "30px 0px"}}
                     ref={(el) => { this.chartContainer = el }}
                     className="Responsive-wrapper"
                 >

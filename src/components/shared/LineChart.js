@@ -7,11 +7,12 @@ import dataJson from "../../data/MonthlySalesbyCategory.json";
 const LineChart = () => {
     const svgLegendRef = useRef(null);
 
+    let monthlySales = [];
+    let svg;
     useEffect(() => {
         const h = 200;
         const w = 400;
         const padding = 25;
-        let monthlySales = []
         let salesTotal = 0.0;
         let salesAvg = 0.0;
         let metrics = [];
@@ -65,7 +66,7 @@ const LineChart = () => {
                 .y(function (d) { return h-d.sales; })
                 .curve(d3.curveLinear);
 
-            const svg = d3.select(svgLegendRef.current)
+             svg = d3.select(svgLegendRef.current)
                 .append("svg")
                 .attr("width", w)
                 .attr("height", h)
@@ -77,7 +78,7 @@ const LineChart = () => {
             svg.append("path")
                 .attr("d", lineFun(monthlySales))
                 .attr("stroke", "rgb(0,169,208)")
-                .attr("stroke-width", 2)
+                .attr("stroke-width", 4)
                 .attr("fill", "none")
 
 
@@ -139,7 +140,7 @@ const LineChart = () => {
 
 
 
-    });
+    },[svg]);
     return(<div style={{background: "rgb(93,38,53)", borderRadius: "8px"} } ref={svgLegendRef}/>)
 
 }

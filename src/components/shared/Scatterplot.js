@@ -4,6 +4,7 @@ import {useEffect, useRef} from 'react';
 
 const Scatterplot = () => {
     const svgLegendRef = useRef(null);
+    let svg;
 
     useEffect(() => {
         const h = 350;
@@ -24,7 +25,7 @@ const Scatterplot = () => {
 
         function salesKPI (d) {
             if (d>=250) { return "#33CC66"; } else
-            if (d<250) { return "#666666"; }
+            if (d<250) { return "#9b9b9b"; }
         }
         //add min/max to array
         Array.max = function( array ){
@@ -51,10 +52,12 @@ const Scatterplot = () => {
 
         }
 
-        const svg = d3.select(svgLegendRef.current)
+         svg = d3.select(svgLegendRef.current)
             .append("svg")
             .attr( "width",w)
-            .attr("height", h);
+            .attr("height", h)
+            .attr("fill", "rgba(199,255,234,0.9)")
+            .attr("rx", 14);
 
         svg.selectAll("circle")
             .data(monthlySales)
@@ -62,7 +65,7 @@ const Scatterplot = () => {
             .append("circle")
             .attr("cx", function(d){ return d.month*3; })
             .attr(   "cy", function(d){ return h-d.sales; })
-            .attr("r",  5)
+            .attr("r",  7)
             .attr("fill", function(d){ return salesKPI(d.sales)})
 
         svg.selectAll("text")
@@ -72,12 +75,12 @@ const Scatterplot = () => {
             .text(function(d){ return showMinMax(monthlySales, 'sales', d.sales, 'minmax'); })
                 .attr("x", function(d){ return (d.month*3)-25; })
     .attr( "y", function(d){ return h-d.sales; })
-    .attr( "font-size", "12px")
+    .attr( "font-size", "13px")
     .attr( "font-family", "sans-serif")
-    .attr(  "fill", "#666666")
+    .attr(  "fill", "#fffefe")
     .attr(    "text-anchor", "start")
-    });
-    return(<div ref={svgLegendRef}/>)
+    },[svg]);
+    return(<div style={{background: "rgba(61,136,194,0.58)", borderRadius: "8px" , padding: "30px 0px"}} ref={svgLegendRef}/>)
 
 }
 
