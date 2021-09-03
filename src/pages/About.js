@@ -13,7 +13,7 @@ class About extends React.Component {
             <BaseLayout className="cover">
                 <div>
                     <Fade left>
-                        <h1 style={{color:"#fff"}} >React Reveal</h1>
+                        <h1 style={{color:"#fff"}} >Data visualization with React D3</h1>
                     </Fade>
                 </div>
                 <Fade bottom>

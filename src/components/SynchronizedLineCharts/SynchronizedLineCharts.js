@@ -58,7 +58,7 @@ const data = [
 
 const SynchronizedLineCharts = (props) => {
         return (
-        <div>
+        <div style={{background: "rgba(61,136,194,0.58)", borderRadius: "8px" , padding: "30px 0px"}}>
             <h4>A demo of synchronized AreaCharts</h4>
             <LineChart
                 width={500}

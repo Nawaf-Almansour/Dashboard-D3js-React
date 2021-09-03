@@ -70,6 +70,22 @@
   }
 }
 
+
+.title-chart {
+  margin-top: 14px;
+  color: white;
+
+  .fa-stack {
+    font-size: 28px;
+  }
+
+  .list-inline-item {
+    > a {
+      color: #373737;
+    }
+  }
+}
+
 .hero-welcome-wrapper {
   justify-content: flex-end;
 
