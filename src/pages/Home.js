@@ -82,11 +82,6 @@ class Home extends React.Component {
                             </Col>
                             <Col md="6" xs="12" lg="6" className="hero-welcome-wrapper  py-3">
                                 <Flash>
-                                    <RectangleChart/>
-                                </Flash>
-                            </Col>
-                            <Col md="6" xs="12" lg="6" className="hero-welcome-wrapper  py-3">
-                                <Flash>
                                     <div className="title-chart">
                                         <h2>title chart example</h2>
                                         <h4>As you can see, one potential problem with a strip plot is that you could
@@ -96,6 +91,12 @@ class Home extends React.Component {
 
                                 </Flash>
                             </Col>
+                            <Col md="6" xs="12" lg="6" className="hero-welcome-wrapper  py-3">
+                                <Flash>
+                                    <RectangleChart/>
+                                </Flash>
+                            </Col>
+
 
                             <Col md="6" xs="12" lg="6" className="hero-welcome-wrapper  py-3">
 

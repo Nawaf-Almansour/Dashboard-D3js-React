@@ -16,15 +16,9 @@ function Video(props) {
     };
 
     useEffect(() => {
-        if (cElement) {
-            props.isPaused
-                ? cElement.target.pauseVideo()
-                : cElement.target.playVideo();
-        }
-    }, [props.isPaused]);
+    }, []);
 
     const _onReady = event => {
-        console.log("_onReady");
         cElement = event;
         // event.target.playVideo();
     };

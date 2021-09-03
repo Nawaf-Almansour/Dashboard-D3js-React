@@ -41,6 +41,9 @@ const Header = (props) => {
                             <BsNavLink route={"/about"} title={"About"}/>
                         </NavItem>
                         <NavItem  className='port-navbar-item navbar__title navbar__item'>
+                            <BsNavLink route={"/map"} title={"Map"}/>
+                        </NavItem>
+                        <NavItem  className='port-navbar-item navbar__title navbar__item'>
                             <NavLink href="https://github.com/Nawaf-Almansour/Dashboard-D3js-React">GitHub</NavLink>
                         </NavItem>
                     </Nav>
