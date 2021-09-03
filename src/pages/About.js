@@ -1,6 +1,7 @@
 import React from "react";
 import BaseLayout from "../components/layouts/BaseLayout";
 import Fade from 'react-reveal/Fade';
+import Video from "../components/shared/Video";
 
 
 class About extends React.Component {
@@ -23,6 +24,9 @@ class About extends React.Component {
                         </h1>
                     </div>
                 </Fade>
+<div>
+                <Video/>
+</div>
             </BaseLayout>
         )
     }
