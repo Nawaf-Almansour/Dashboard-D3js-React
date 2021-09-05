@@ -22,7 +22,7 @@ const RectangleChart = () => {
                 if (v <= 20) {
                     return "#666666";
                 } else if (v > 20) {
-                    return "#FF0033";
+                    return "#d90c44";
                 }
             }
 
@@ -65,7 +65,7 @@ const RectangleChart = () => {
                 .attr("style" , " color:white");
     },[svg]);
 
-    return(<div style={{background: "rgba(61,194,131,0.58)", borderRadius: "8px" , padding: "30px 0px"} }  ref={svgLegendRef}/>)
+    return(<div className='ms' style={{background: "rgb(12 182 101)", borderRadius: "8px" , padding: "30px 0px"} }  ref={svgLegendRef}/>)
 
 }
 

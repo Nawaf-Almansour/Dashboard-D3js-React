@@ -1,7 +1,6 @@
 import React from "react";
 import BaseLayout from "../components/layouts/BaseLayout";
 import RectangleChart from "../components/shared/RectangleChart";
-import LineChart from "../components/shared/LineChart";
 import Scatterplot from "../components/shared/Scatterplot";
 import Chart from "../components/charts/LineChart/Chart/Chart";
 import SynchronizedLineCharts from "../components/SynchronizedLineCharts/SynchronizedLineCharts";
@@ -10,6 +9,7 @@ import BrushZoom from "../components/charts/BrushZoom/BrushZoom";
 import ParentSize from '@visx/responsive/lib/components/ParentSize';
 import Typed from 'react-typed';
 import Flash from 'react-reveal/Flash';
+import {Suspense} from 'react';
 
 import Example from '../components/charts/Pies/Pies';
 import {Col, Container, Row} from "reactstrap";
@@ -80,145 +80,163 @@ class Home extends React.Component {
                                     </h1>
                                 </div>
                             </Col>
-                            <Col md="6" xs="12" lg="6" className="hero-welcome-wrapper  py-3">
-                                <Flash>
-                                    <div className="title-chart">
-                                        <h2>title chart example</h2>
-                                        <h4>As you can see, one potential problem with a strip plot is that you could
-                                            have very dense grouping of data points, leading to data points being
-                                            plotted over top of one another on the chart and obscuring the data.</h4>
+                            <Suspense fallback={<h1>Loading profile...</h1>}>
+
+                                <Col md="6" xs="12" lg="6" className="hero-welcome-wrapper mt-5 py-3">
+                                    <Flash>
+                                        <div className="title-chart ">
+                                            <h2>title chart example</h2>
+                                            <h4>As you can see, one potential problem with a strip plot is that you
+                                                could
+                                                have very dense grouping of data points, leading to data points being
+                                                plotted over top of one another on the chart and obscuring the
+                                                data.</h4>
+                                        </div>
+
+                                    </Flash>
+                                </Col>
+                                <Col md="6" xs="12" lg="6" className="hero-welcome-wrapper mt-5 py-3">
+                                        <Fade right>
+                                        <RectangleChart/>
+                                    </Fade>
+                                </Col>
+
+                            </Suspense>
+
+                            <Suspense fallback={<h1>Loading profile...</h1>}>
+
+                                <Col md="6" xs="12" lg="6" className="hero-welcome-wrapper mt-5 py-3">
+                                    <Flash>
+                                        <div className="title-chart">
+                                            <h2>title chart example</h2>
+
+                                            <h4>As you can see, one potential problem with a strip plot is that you
+                                                could
+                                                have very dense grouping of data points, leading to data points being
+                                                plotted over top of one another on the chart and obscuring the
+                                                data.</h4>
+                                        </div>
+
+                                    </Flash>
+                                </Col>
+                                <Col md="6" xs="12" lg="6" className="hero-welcome-wrapper mt-5 py-3">
+                                    <Fade right>
+                                    <Scatterplot/>
+                                        </Fade>
+                                </Col>
+                            </Suspense>
+                            <Suspense fallback={<h1>Loading profile...</h1>}>
+
+                                <Col md="6" xs="12" lg="6" className="hero-welcome-wrapper mt-5 py-3">
+
+                                    <Chart/>
+                                </Col>
+                                <Col md="6" xs="12" lg="6" className="hero-welcome-wrapper mt-5 py-3">
+                                    <Flash>
+                                        <div className="title-chart">
+                                            <h2>title chart example</h2>
+
+                                            <h4>As you can see, one potential problem with a strip plot is that you
+                                                could
+                                                have very dense grouping of data points, leading to data points being
+                                                plotted over top of one another on the chart and obscuring the
+                                                data.</h4>
+                                        </div>
+
+                                    </Flash>
+                                </Col>
+                            </Suspense>
+                            <Suspense fallback={<h1>Loading profile...</h1>}>
+
+                                <Col md="6" xs="12" lg="6" className="hero-welcome-wrapper mt-5 py-3">
+                                    <Fade left>
+                                    <SynchronizedLineCharts/>
+                                    </Fade>
+                                </Col>
+                                <Col md="6" xs="12" lg="6" className="hero-welcome-wrapper mt-5 py-3">
+                                    <Flash>
+                                        <div className="title-chart">
+                                            <h2>title chart example</h2>
+
+                                            <h4>As you can see, one potential problem with a strip plot is that you
+                                                could
+                                                have very dense grouping of data points, leading to data points being
+                                                plotted over top of one another on the chart and obscuring the
+                                                data.</h4>
+                                        </div>
+
+                                    </Flash>
+                                </Col>
+
+                                <Col md="6" xs="12" lg="6" className="hero-welcome-wrapper mt-5 py-3">
+
+                                    <GroupedBar/>
+                                </Col>
+                            </Suspense>
+
+                            <Suspense fallback={<h1>Loading profile...</h1>}>
+
+                                <Col md="6" xs="12" lg="6" className="hero-welcome-wrapper mt-5 py-3">
+                                    <Flash>
+                                        <div className="title-chart">
+                                            <h2>title chart example</h2>
+
+                                            <h4>As you can see, one potential problem with a strip plot is that you
+                                                could
+                                                have very dense grouping of data points, leading to data points being
+                                                plotted over top of one another on the chart and obscuring the
+                                                data.</h4>
+                                        </div>
+
+                                    </Flash>
+                                </Col>
+                                <Col md="6" xs="12" lg="6" className="hero-welcome-wrapper mt-5  py-3">
+
+                                    <BrushZoom/>
+                                </Col>
+
+                            </Suspense>
+                            <Suspense fallback={<h1>Loading profile...</h1>}>
+                                <Col md="6" xs="12" lg="6" className="hero-welcome-wrapper mt-5 py-3">
+                                    <Flash>
+                                        <div className="title-chart">
+                                            <h2>title chart example</h2>
+
+                                            <h4>As you can see, one potential problem with a strip plot is that you
+                                                could
+                                                have very dense grouping of data points, leading to data points being
+                                                plotted over top of one another on the chart and obscuring the
+                                                data.</h4>
+                                        </div>
+
+                                    </Flash>
+                                </Col>
+                            </Suspense>
+                            <Suspense fallback={<h1>Loading profile...</h1>}>
+
+                                <Col md="6" xs="12" lg="6" className="hero-welcome-wrapper mt-5 py-3">
+
+                                    <div style={{height: "400px"}}>
+                                        <ParentSize>{({width, height}) => <Example width={width}
+                                                                                   height={height}/>}</ParentSize>,
+
                                     </div>
+                                </Col>
+                                <Col md="6" xs="12" lg="6" className="hero-welcome-wrappe mt-5 py-3">
+                                    <Flash>
+                                        <div className="title-chart">
+                                            <h2>title chart example</h2>
 
-                                </Flash>
-                            </Col>
-                            <Col md="6" xs="12" lg="6" className="hero-welcome-wrapper  py-3">
-                                <Flash>
-                                    <RectangleChart/>
-                                </Flash>
-                            </Col>
+                                            <h4>As you can see, one potential problem with a strip plot is that you
+                                                could
+                                                have very dense grouping of data points, leading to data points being
+                                                plotted over top of one another on the chart and obscuring the
+                                                data.</h4>
+                                        </div>
 
-
-                            <Col md="6" xs="12" lg="6" className="hero-welcome-wrapper  py-3">
-
-                                <LineChart/>
-                            </Col>
-                            <Col md="6" xs="12" lg="6" className="hero-welcome-wrapper  py-3">
-                                <Flash>
-                                    <div className="title-chart">
-                                        <h2>title chart example</h2>
-
-                                        <h4>As you can see, one potential problem with a strip plot is that you could
-                                            have very dense grouping of data points, leading to data points being
-                                            plotted over top of one another on the chart and obscuring the data.</h4>
-                                    </div>
-
-                                </Flash>
-                            </Col>
-
-                            <Col md="6" xs="12" lg="6" className="hero-welcome-wrapper  py-3">
-
-                                <Scatterplot/>
-                            </Col>
-                            <Col md="6" xs="12" lg="6" className="hero-welcome-wrapper  py-3">
-                                <Flash>
-                                    <div className="title-chart">
-                                        <h2>title chart example</h2>
-
-                                        <h4>As you can see, one potential problem with a strip plot is that you could
-                                            have very dense grouping of data points, leading to data points being
-                                            plotted over top of one another on the chart and obscuring the data.</h4>
-                                    </div>
-
-                                </Flash>
-                            </Col>
-
-                            <Col md="6" xs="12" lg="6" className="hero-welcome-wrapper  py-3">
-
-                                <Chart/>
-                            </Col>
-                            <Col md="6" xs="12" lg="6" className="hero-welcome-wrapper  py-3">
-                                <Flash>
-                                    <div className="title-chart">
-                                        <h2>title chart example</h2>
-
-                                        <h4>As you can see, one potential problem with a strip plot is that you could
-                                            have very dense grouping of data points, leading to data points being
-                                            plotted over top of one another on the chart and obscuring the data.</h4>
-                                    </div>
-
-                                </Flash>
-                            </Col>
-
-                            <Col md="6" xs="12" lg="6" className="hero-welcome-wrapper  py-3">
-
-                                <SynchronizedLineCharts/>
-                            </Col>
-                            <Col md="6" xs="12" lg="6" className="hero-welcome-wrapper  py-3">
-                                <Flash>
-                                    <div className="title-chart">
-                                        <h2>title chart example</h2>
-
-                                        <h4>As you can see, one potential problem with a strip plot is that you could
-                                            have very dense grouping of data points, leading to data points being
-                                            plotted over top of one another on the chart and obscuring the data.</h4>
-                                    </div>
-
-                                </Flash>
-                            </Col>
-
-                            <Col md="6" xs="12" lg="6" className="hero-welcome-wrapper  py-3">
-
-                                <GroupedBar/>
-                            </Col>
-                            <Col md="6" xs="12" lg="6" className="hero-welcome-wrapper  py-3">
-                                <Flash>
-                                    <div className="title-chart">
-                                        <h2>title chart example</h2>
-
-                                        <h4>As you can see, one potential problem with a strip plot is that you could
-                                            have very dense grouping of data points, leading to data points being
-                                            plotted over top of one another on the chart and obscuring the data.</h4>
-                                    </div>
-
-                                </Flash>
-                            </Col>
-                            <Col md="6" xs="12" lg="6" className="hero-welcome-wrapper  py-3">
-
-                                <BrushZoom/>
-                            </Col>
-                            <Col md="6" xs="12" lg="6" className="hero-welcome-wrapper  py-3">
-                                <Flash>
-                                    <div className="title-chart">
-                                        <h2>title chart example</h2>
-
-                                        <h4>As you can see, one potential problem with a strip plot is that you could
-                                            have very dense grouping of data points, leading to data points being
-                                            plotted over top of one another on the chart and obscuring the data.</h4>
-                                    </div>
-
-                                </Flash>
-                            </Col>
-
-                            <Col md="6" xs="12" lg="6" className="hero-welcome-wrapper  py-3">
-
-                                <div style={{height: "400px"}}>
-                                    <ParentSize>{({width, height}) => <Example width={width}
-                                                                               height={height}/>}</ParentSize>,
-
-                                </div>
-                            </Col>
-                            <Col md="6" xs="12" lg="6" className="hero-welcome-wrappe py-3">
-                                <Flash>
-                                    <div className="title-chart">
-                                        <h2>title chart example</h2>
-
-                                        <h4>As you can see, one potential problem with a strip plot is that you could
-                                            have very dense grouping of data points, leading to data points being
-                                            plotted over top of one another on the chart and obscuring the data.</h4>
-                                    </div>
-
-                                </Flash>
-                            </Col>
+                                    </Flash>
+                                </Col>
+                            </Suspense>
 
                         </Row>
                     </Container>

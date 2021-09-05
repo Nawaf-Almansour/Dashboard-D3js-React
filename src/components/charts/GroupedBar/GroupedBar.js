@@ -35,7 +35,7 @@ const options = {
 };
 
 const GroupedBar = () => (
-        <Bar style={{background: "rgba(61,136,194,0.58)", borderRadius: "8px" , padding: "30px 0px"}} data={data} options={options} />
+        <Bar style={{background: "rgb(11 43 69)", borderRadius: "8px" , padding: "30px 0px"}} data={data} options={options} />
 );
 
 export default GroupedBar;

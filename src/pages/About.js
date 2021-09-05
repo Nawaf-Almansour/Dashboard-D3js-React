@@ -2,6 +2,7 @@ import React from "react";
 import BaseLayout from "../components/layouts/BaseLayout";
 import Fade from 'react-reveal/Fade';
 import Video from "../components/shared/Video";
+import {Col, Container, Row} from "reactstrap";
 
 
 class About extends React.Component {
@@ -22,9 +23,15 @@ class About extends React.Component {
                         </h1>
                     </div>
                 </Fade>
-                <div>
+                <Container>
+                    <Row>
+                        <Col md="12">
+                            <div className={"video"}>
                     <Video/>
-                </div>
+                            </div>
+                        </Col>
+                    </Row>
+                </Container>
             </BaseLayout>
         )
     }

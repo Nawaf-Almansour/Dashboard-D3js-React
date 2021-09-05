@@ -80,7 +80,7 @@ const Scatterplot = () => {
     .attr(  "fill", "#fffefe")
     .attr(    "text-anchor", "start")
     },[svg]);
-    return(<div style={{background: "rgba(61,136,194,0.58)", borderRadius: "8px" , padding: "30px 0px"}} ref={svgLegendRef}/>)
+    return(<div style={{background: "rgb(1 52 126)", borderRadius: "8px" , padding: "30px 0px"}} ref={svgLegendRef}/>)
 
 }
 

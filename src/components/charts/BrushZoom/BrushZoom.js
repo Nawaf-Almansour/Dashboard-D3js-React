@@ -38,7 +38,7 @@ class BrushZoom extends React.Component {
 
     render() {
         return (
-            <div                 style={{background: "rgba(176,61,194,0.58)", borderRadius: "8px" , padding: "30px 0px"}}
+            <div  style={{background: "rgb(249 232 232)", borderRadius: "8px" , padding: "30px 0px"}}
             >
             <VictoryChart
                 domain={{y: [0, 100]}}
